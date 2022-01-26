@@ -21,6 +21,7 @@ public class Test {
 		dto.setPassword("dfsdf");
 		
 		user.insert(dto);
+//		user.delete();
 		System.out.println("Insert Successful");
 	}
 	
