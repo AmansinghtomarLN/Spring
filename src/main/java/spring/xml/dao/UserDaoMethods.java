@@ -10,5 +10,5 @@ public interface UserDaoMethods {
 	public void delete();
 	public List<SignupDto> findAllUsers();
 	public void displayList(List<SignupDto> list);
-
+	public List<SignupDto> findbyEmail(String email);
 }
