@@ -1,9 +1,12 @@
 package spring.xml.dao;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 
 import spring.xml.dto.SignupDto;
+import spring.xml.mapper.UserRowMapper;
 
 public class UserDao implements UserDaoMethods {
 
@@ -23,4 +26,19 @@ public class UserDao implements UserDaoMethods {
 		String sql = "truncate table user";
 		jdbcTemplate.execute(sql);
 	}
+
+	@Override
+	public List<SignupDto> findAllUsers() {
+		String sql = "Select * from user";
+	List<SignupDto> signupDtoList = 	jdbcTemplate.query(sql, new UserRowMapper());
+		return signupDtoList;
+	}
+
+	@Override
+	public void displayList(List<SignupDto> list) {
+		for(SignupDto signupDto: list) {
+			System.out.println(signupDto);
+		}		
+	}
+	
 }

@@ -1,5 +1,7 @@
 package spring.xml.test;
 
+import java.util.List;
+
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
@@ -15,13 +17,16 @@ public class Test {
 		System.out.println("Context loaded");
 		
 		SignupDto dto = new SignupDto();
-		dto.setName("ashu");
-		dto.setEmail("adfsd@");
-		dto.setMobile("89");
-		dto.setPassword("dfsdf");
+		dto.setName("aman");
+		dto.setEmail("adfsdssd@");
+		dto.setMobile("89sd");
+		dto.setPassword("dfsdssdf");
 		
-		user.insert(dto);
+	//	user.insert(dto);
 //		user.delete();
+		List<SignupDto> list = user.findAllUsers();
+		user.displayList(list);
+		
 		System.out.println("Insert Successful");
 	}
 	

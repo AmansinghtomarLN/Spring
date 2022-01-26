@@ -30,6 +30,10 @@ public class SignupDto {
 	public void setPassword(String password) {
 		this.password = password;
 	}
+	@Override
+	public String toString() {
+		return "SignupDto [name=" + name + ", email=" + email + ", mobile=" + mobile + ", password=" + password + "]";
+	}
 	
 	
 }
